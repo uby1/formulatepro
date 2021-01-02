@@ -155,8 +155,8 @@ static NSString *pathArchiveKey = @"path";
         point = new_point;
         
         theEvent = [[_docView window] nextEventMatchingMask:
-                    (NSLeftMouseDraggedMask | NSLeftMouseUpMask)];
-        if ([theEvent type] == NSLeftMouseUp)
+                    (NSEventMaskLeftMouseDragged | NSEventMaskLeftMouseUp)];
+        if ([theEvent type] == NSEventTypeLeftMouseUp)
             break;
     }
     _bounds = [_path bounds];
